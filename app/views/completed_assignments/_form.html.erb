@@ -1,0 +1,37 @@
+<%= form_for(@completed_assignment) do |f| %>
+  <% if @completed_assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@completed_assignment.errors.count, "error") %> prohibited this completed_assignment from being saved:</h2>
+
+      <ul>
+      <% @completed_assignment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :submit %><br>
+    <%= f.text_field :submit %>
+  </div>
+  <div class="field">
+    <%= f.label :completion_date %><br>
+    <%= f.datetime_select :completion_date %>
+  </div>
+  <div class="field">
+    <%= f.label :complete %><br>
+    <%= f.check_box :complete %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :assignment_id %><br>
+    <%= f.text_field :assignment_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
