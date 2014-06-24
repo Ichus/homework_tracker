@@ -61,6 +61,14 @@ class TeachersController < ApplicationController
     end
   end
 
+  def add_student
+    user = User.find(params[:username])
+    @teacher.users << user.id
+
+    teacher = Teacher.find(current_user.id)
+    @user.assignments << Assignment.find(teacher.id)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_teacher

@@ -1,0 +1,11 @@
+<h1>Add Students to your Class</h1>
+
+<%= form_tag add_student_path do %>
+  <p>
+    <%= label_tag :username %><br>
+    <%= text_field_tag :username, params[:username] %>
+  </p>
+  <p>
+    <%= submit_tag("Add Student") %>
+  </p>
+<% end %>

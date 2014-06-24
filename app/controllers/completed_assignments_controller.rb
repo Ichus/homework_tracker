@@ -25,6 +25,8 @@ class CompletedAssignmentsController < ApplicationController
   # POST /completed_assignments.json
   def create
     @completed_assignment = CompletedAssignment.new(completed_assignment_params)
+    @completed_assignment.user_id = current_user.id
+    @completed_assignment.assignment_id = #Something here to pass the assignment_id from the assignments_users table. Need to set those tables up first
 
     respond_to do |format|
       if @completed_assignment.save

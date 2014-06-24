@@ -9,7 +9,15 @@ Rails.application.routes.draw do
   resources :sessions
 
   get "sign_up_teacher" => "teachers#new", :as => "sign_up_teacher"
-  resources :teachers
+  # get "app/views/teachers/add_student" => "teachers#add_student", :as => "add_student"
+  resources :teachers #do
+  #   collection do
+  #     get :add_student
+  #   end
+  #   member do
+  #     get :add_student
+  #   end
+  # end
 
   get "sign_up_user" => "users#new", :as => "sign_up_user"
   resources :users
