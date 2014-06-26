@@ -8,4 +8,16 @@ class Assignment < ActiveRecord::Base
   validates :due_date, presence: true
   validates :description, presence: true
   validates :teacher_id, presence: true
+
+  def assigned?(assignment)
+    assignment.assign_date < Time.current
+  end
+
+  def late?(assignment)
+    assignment.due_date < Time.current
+  end
+
+  def completed(assignment, user)
+    CompletedAssignment.where(assignment_id: assignment.id, user_id: user.id)
+  end
 end

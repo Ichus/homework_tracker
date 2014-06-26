@@ -61,12 +61,16 @@ class TeachersController < ApplicationController
     end
   end
 
-  def add_student
-    user = User.find(params[:username])
-    @teacher.users << user.id
+  def add_student_form
+  end
 
+  def add_student
+    user = User.find_by_username(params[:username])
     teacher = Teacher.find(current_user.id)
-    @user.assignments << Assignment.find(teacher.id)
+    teacher.users << user
+
+    user.assignments << Assignment.find_by_teacher_id(teacher.id)
+    redirect_to teachers_path
   end
 
   private
