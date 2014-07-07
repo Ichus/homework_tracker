@@ -5,11 +5,11 @@ one:
   assign_date: 2014-06-22 10:53:19
   due_date: 2014-06-22 10:53:19
   description: MyString
-  teacher_id_id: 
+  teacher_id:
 
 two:
   title: MyString
   assign_date: 2014-06-22 10:53:19
   due_date: 2014-06-22 10:53:19
   description: MyString
-  teacher_id_id: 
+  teacher_id: 

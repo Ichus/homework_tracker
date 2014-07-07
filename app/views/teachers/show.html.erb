@@ -6,3 +6,11 @@
   <strong>User:</strong>
   <%= @teacher.username %>
 </p>
+<p>Assignments:</p><br>
+<% @assignments.each do |assignment| %>
+<p><%= assignment.title %></p>
+<% end %>
+<p>Students:</p><br>
+<% @users.each do |user| %>
+<p><%= user.username %></p>
+<% end %>

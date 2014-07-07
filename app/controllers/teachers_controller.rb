@@ -10,6 +10,14 @@ class TeachersController < ApplicationController
   # GET /teachers/1
   # GET /teachers/1.json
   def show
+    @assignments = Assignment.where(teacher_id: @teacher.id)
+    user_ids = TeachersUser.where(teacher_id: @teacher.id)
+    @users = []
+    unless user_ids.nil?
+      user_ids.each do |user_id|
+        @users << User.find(user_id.user_id)
+      end
+    end
   end
 
   # GET /teachers/new

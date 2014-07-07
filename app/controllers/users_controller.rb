@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @assigned = AssignmentsUsers.all
+    @assignments = Assignment.all
   end
 
   # GET /users/1

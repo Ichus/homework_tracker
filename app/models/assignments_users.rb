@@ -1,4 +1,4 @@
-class AssignmentUser < ActiveRecord::Base
+class AssignmentsUsers < ActiveRecord::Base
   belongs_to :assignment
   belongs_to :user
 end

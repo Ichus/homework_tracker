@@ -4,12 +4,12 @@ one:
   submit: MyString
   completion_date: 2014-06-22 10:55:48
   complete: false
-  user_id_id: 
-  assignment_id_id: 
+  user_id_id:
+  assignment_id:
 
 two:
   submit: MyString
   completion_date: 2014-06-22 10:55:48
   complete: false
-  user_id_id: 
-  assignment_id_id: 
+  user_id_id:
+  assignment_id:

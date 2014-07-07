@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20140622145830) do
 
   add_index "assignments", ["teacher_id"], name: "index_assignments_on_teacher_id"
 
-  create_table "assignments_users", id: false, force: true do |t|
+  create_table "assignments_users", force: true do |t|
     t.integer  "assignment_id"
     t.integer  "user_id"
     t.datetime "created_at"

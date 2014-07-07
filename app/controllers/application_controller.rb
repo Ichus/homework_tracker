@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
+  helper_method :assigned?
+  helper_method :late?
+  helper_method :completed
 
   private
 
@@ -12,5 +15,17 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find(session[:user_id])
       @current_user ||= Teacher.find(session[:user_id])
     end
+  end
+
+  def assigned?(assignment)
+    assignment.assign_date < Time.current
+  end
+
+  def late?(assignment)
+    assignment.due_date < Time.current
+  end
+
+  def completed(assignment)
+    CompletedAssignment.find_by_assignment_id(assignment.id)
   end
 end
